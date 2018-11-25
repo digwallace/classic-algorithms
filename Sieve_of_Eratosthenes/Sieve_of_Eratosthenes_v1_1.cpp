@@ -31,7 +31,7 @@ int main(int argc, char* argv[]){
   int col   = (argc >= 3) ? atoi(argv[2]) : 10;
   int count = 0;
 
-  // Build vector of values to determine.
+  // Build vector for values.
   std::vector<bool> primes;
   for(int i = 1; i <= n; i++){
     primes.push_back(true);
@@ -43,7 +43,7 @@ int main(int argc, char* argv[]){
   // Sieve of Eratosthenes algorithm.
   for(int i = 2; i < n; i++){
     if(i % 2 == 0 && i != 2){
-        continue;
+      continue;
     }
     for(int j = i + 1; j <= n; j++){
       if(j % i == 0){
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]){
     }
   }
 
-  // Alarm to indicate finished processing.
+  // Alarm to indicate processing is complete..
   std::cout << '\a';
   
   go = false;
@@ -76,9 +76,9 @@ int main(int argc, char* argv[]){
   return 0;
 }
 
-// Used by thread to print a running animation to
-// let the user know the program hasn't crashed
-// when calculating large quantities of primes.
+// Used by thread to print a running animation to let the user know 
+// the program hasn't crashed when calculating large quantities of 
+// primes.
 void calculating(){
     
   int k = 0;

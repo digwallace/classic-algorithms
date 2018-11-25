@@ -70,9 +70,9 @@ int main(int argc, char* argv[]){
   return 0;
 }
 
-// Used by thread to print a running animation to
-// let the user know the program hasn't crashed
-// when calculating large quantities of primes.
+// Used by thread to print a running animation to let the user know 
+// the program hasn't crashed when calculating large quantities of 
+// primes.
 void calculating(){
     
   int k = 0;
