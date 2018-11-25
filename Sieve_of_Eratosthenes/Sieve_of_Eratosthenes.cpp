@@ -12,7 +12,6 @@
 #include<vector>
 
 bool go;
-
 void calculating();
 
 int main(int argc, char* argv[]){
