@@ -16,14 +16,16 @@ void calculating();
 
 int main(int argc, char* argv[]){
 
+  // Usage check.
   if(argc < 2){
-    std::cout << "Usage: \n\t$ " << argv[0] << " <Prime_Limit>"
-                 " [Print_Columns]\n\n"
+    std::cout << "Usage: \n\t$ " << argv[0] << " <Prime_Limit> "
+                 "[Print_Columns]\n\n"
                  "\t<Prime_Limit>\tRange to calculate.\n"
                  "\t[Print_Columns]\tSpecifies the number "
                  "of primes printed per row.\n\n";
     return 1;
   }
+
   int n     = atoi(argv[1]);    
   int len   = std::to_string(n).length();
   int col   = (argc >= 3) ? atoi(argv[2]) : 10;
@@ -77,7 +79,9 @@ void calculating(){
   int c = 0;
 
   while(go == true){
+    
     k = (k+1) % 4;
+    
     switch(k){
       case 0:
         c = 0x5c;
@@ -92,6 +96,7 @@ void calculating(){
         c = 0x2d;
         break;
     }
+
     std::cout << "Calculating... " << (char)c << " \r";
     std::cout.flush();
     std::this_thread::sleep_for(std::chrono::milliseconds(100));
