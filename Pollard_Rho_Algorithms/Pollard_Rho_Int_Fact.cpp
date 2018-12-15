@@ -46,8 +46,11 @@ int main(int argc, char* argv[]){
 
   // Pollard's Rho Algorithm.
   while(d == 1){
+    // g(x) = (x^2 +- 1) % n
     x = (x*x + opt) % n;
+    // f(y) = g(g(y));
     y = ((y*y+opt)%n * (y*y+opt)%n + opt) % n;
+    
     d = gcd(std::abs(x - y), n);
   }
 
