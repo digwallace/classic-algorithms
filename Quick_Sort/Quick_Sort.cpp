@@ -29,7 +29,7 @@ int GetPartitionIndex(int unsorted_array[], int first, int last){
 void QuickSort(int unsorted_array[], int first, int last){
 
     // Traverse array until sorted.
-    if(low < high){
+    if(first < last){
         // Find the index to split the array at.
         int partition_index = GetPartitionIndex(unsorted_array, first, last);
         
