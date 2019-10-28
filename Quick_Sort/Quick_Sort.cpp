@@ -32,7 +32,8 @@ void QuickSort(int unsorted_array[], int first, int last){
     if(first < last){
         // Find the index to split the array at.
         int partition_index = GetPartitionIndex(unsorted_array, first, last);
-        
+       
+        // Sort each half.
         QuickSort(unsorted_array, first, partition_index - 1);
         QuickSort(unsorted_array, partition_index + 1, last);
     }
