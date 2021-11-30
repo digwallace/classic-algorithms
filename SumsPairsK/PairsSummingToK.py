@@ -21,8 +21,6 @@ class PairsSumToK:
         self.count_pairs_summing_to_k()
         self.validation()
         
-        
-        
 
     def get_random_numbers(self):
         self.random_list = random.sample(range(self.lower_limit, self.upper_limit), self.size)
@@ -38,6 +36,7 @@ class PairsSumToK:
                 
         #print(json.dumps(self.random_dict, indent=2))
     
+    
     def count_pairs_summing_to_k(self):
         for key, value in self.random_dict.items():
             remainder = self.sum - int(key)
@@ -48,6 +47,7 @@ class PairsSumToK:
             
         print(self.count)
     
+    
     def validation(self):
         for number_one in self.random_list:
             for number_two in self.random_list:
@@ -55,7 +55,7 @@ class PairsSumToK:
                     self.validation_count += 1
         self.validation_count /= 2
         self.validation_count = int(self.validation_count)
-        print("validation:", self.validation_count)
+    
     
 def main():
     if len(sys.argv) > 1:
@@ -65,6 +65,7 @@ def main():
         k = 69
         print("No parameter for k given, using 69 as k!")
     solution = PairsSumToK(k)
+    
     
 if __name__ == "__main__":
     main()
