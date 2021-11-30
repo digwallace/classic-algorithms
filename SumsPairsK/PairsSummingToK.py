@@ -41,9 +41,7 @@ class PairsSumToK:
     def count_pairs_summing_to_k(self):
         for key, value in self.random_dict.items():
             remainder = self.sum - int(key)
-            #print("=====\nkey:", key)
-            #print("remainder:", remainder)
-            if remainder in self.random_dict and self.random_dict[remainder] > 0 and remainder > self.lower_limit:
+            if remainder in self.random_dict and self.random_dict[remainder] > 0 and remainder >= self.lower_limit:
                 self.random_dict[remainder] -= 1
                 self.random_dict[key]       -= 1
                 self.count += 1
