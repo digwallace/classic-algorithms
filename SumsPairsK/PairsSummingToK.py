@@ -65,6 +65,7 @@ def main():
         k = 69
         print("No parameter for k given, using 69 as k!")
     solution = PairsSumToK(k)
+    print("Number of pairs summing to " + str(k) + " is " + str(solution.count))
     
     
 if __name__ == "__main__":
