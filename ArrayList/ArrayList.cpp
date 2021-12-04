@@ -119,16 +119,16 @@ bool remove(void* element){
 }
 
 bool removeAll(void* start, int count){
+// INCOMPLETE
     bool status = false;
     for(int i = 0; i < count; i++){
         if(status == true){
-            remove(i);
+            remove(start[i]);
         }else{
-            status = remove(i);
+            status = remove(start[i]);
         }
     }
-    
-    return true;
+    return status;
 }
 
 //bool removeIf(Predicate<? super E> filter);
@@ -146,12 +146,15 @@ bool retainAll(void* start, int count){
 }
 
 void* set(int index, void* element){
-    // TODO
-    return NULL;
+    if(index < 0 || index > size){
+        return NULL;
+    }
+    void* returnValue = array[index];
+    array[index] = *element;
+    return *returnValue;
 }
 
 int size(){
-    // TODO
     return size;
 }
 
@@ -168,10 +171,22 @@ void* toArray(){
 }
 
 void trimToSize(){
-    // TODO
-    return NULL;
+    for(int i = length; i > 0; i--){
+        if(array[i] == NULL){
+            length--;
+        }
+    }
 }
 
 void increaseSize(){
+    int newSize = size * 2;
+    void* newArrayList = malloc(newSize);
     
+}
+
+void copyToNew(void* start, int length){
+    void* current = start;
+    for(int i = 0; i < length; i++){
+        
+    }
 }

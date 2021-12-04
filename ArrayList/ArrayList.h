@@ -6,6 +6,7 @@ class ArrayList{
     public:
         int     length;
         int     last;
+        int     objectSize;
         void*   array;
         
         ArrayList();
