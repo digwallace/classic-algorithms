@@ -17,8 +17,9 @@ bool add(void* element){
 }
 
 void add(int index, void* element){
-    // TODO
-    return;
+    if(array != NULL){
+        array[index] = *element;
+    };
 }
 
 bool addAll(void* startOfList){
