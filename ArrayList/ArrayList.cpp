@@ -168,6 +168,7 @@ void* subList(int fromIndex, int toIndex){
 
 void* toArray(){
     // TODO
+    int array
     return NULL;
 }
 
@@ -182,12 +183,19 @@ void trimToSize(){
 void increaseSize(){
     int newSize = size * 2;
     void* newArrayList = malloc(newSize);
-    
+    copyToNew(newArrayList, newSize);
+    for(int i = 0; i < length; i++){
+        delete array[i]
+    }
+    length = newSize;
+    delete array;
+    array = newArrayList;
 }
 
 void copyToNew(void* start, int length){
     void* current = start;
     for(int i = 0; i < length; i++){
-        
+        current = array[i];
+        current++;
     }
 }
